@@ -7,57 +7,59 @@
  */
 const routes = [
   {
-    path: '/app/dashboard', // the url
-    icon: 'HomeIcon', // the component being exported from icons/index.js
-    name: 'Dashboard', // name that appear in Sidebar
+    path: "/app/dashboard", // the url
+    icon: "HomeIcon", // the component being exported from icons/index.js
+    name: "Home", // name that appear in Sidebar
   },
   {
-    path: '/app/forms',
-    icon: 'FormsIcon',
-    name: 'Wallet',
+    path: "/app/forms",
+    icon: "FormsIcon",
+    name: "Account",
+  },
+
+  {
+    path: "/app/cards",
+    icon: "CardsIcon",
+    name: "Loan Book",
   },
   {
-    path: '/app/cards',
-    icon: 'CardsIcon',
-    name: 'Loans',
+    path: "/app/buttons",
+    icon: "ButtonsIcon",
+    name: "Earnings & Commisions",
   },
   {
-    path: '/app/charts',
-    icon: 'ChartsIcon',
-    name: 'Lending',
+    path: "/app/charts",
+    icon: "ChartsIcon",
+    name: "Transfer & Payments",
   },
+
   {
-    path: '/app/buttons',
-    icon: 'ButtonsIcon',
-    name: 'Earnings',
-  },
-  {
-    icon: 'PagesIcon',
-    name: 'My Network',
+    icon: "PagesIcon",
+    name: "My Network",
     routes: [
       // submenu
       {
-        path: '/login',
-        name: 'Login',
+        path: "/login",
+        name: "Login",
       },
       {
-        path: '/create-account',
-        name: 'Create account',
+        path: "/create-account",
+        name: "Create account",
       },
       {
-        path: '/forgot-password',
-        name: 'Forgot password',
+        path: "/forgot-password",
+        name: "Forgot password",
       },
       {
-        path: '/app/404',
-        name: '404',
+        path: "/app/404",
+        name: "404",
       },
       {
-        path: '/app/blank',
-        name: 'Blank',
+        path: "/app/blank",
+        name: "Blank",
       },
     ],
   },
-]
+];
 
-export default routes
+export default routes;
