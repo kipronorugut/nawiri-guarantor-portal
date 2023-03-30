@@ -18,8 +18,16 @@ function Login() {
     e.preventDefault();
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      history.push("/");
+      const { user } = await signInWithEmailAndPassword(auth, email, password);
+      if (user.emailVerified) {
+        console.log("Here");
+        history.push("/");
+      } else {
+        setError({
+          message:
+            "Your email address has not been verified. Please check your email for the verification link and follow the instructions to complete the signup process.",
+        });
+      }
     } catch (error) {
       console.error(error);
       setError(error);
@@ -51,7 +59,7 @@ function Login() {
               </h1>
 
               {error && (
-                <div className="bg-red-500 py-2 px-4 rounded-md text-white font-bold">                  
+                <div className="bg-red-500 py-2 px-4 rounded-md text-white font-bold">
                   {error.code === "auth/invalid-email"
                     ? "The email address is invalid. Please enter a valid email address."
                     : error.code === "auth/user-not-found"
@@ -59,7 +67,7 @@ function Login() {
                     : error.code === "auth/wrong-password"
                     ? "The password is invalid. Please enter the correct password."
                     : "An error occurred. Please try again later."}
-                    <br/>
+                  <br />
                 </div>
               )}
 

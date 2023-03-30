@@ -14,18 +14,18 @@ const routes = [
   {
     path: "/app/forms",
     icon: "FormsIcon",
-    name: "Account",
+    name: "Loans",
   },
 
   {
     path: "/app/cards",
     icon: "CardsIcon",
-    name: "Loan Book",
+    name: "Account",
   },
   {
     path: "/app/buttons",
     icon: "ButtonsIcon",
-    name: "Earnings & Commisions",
+    name: "Transactions",
   },
   {
     path: "/app/charts",

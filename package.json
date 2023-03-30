@@ -7,7 +7,7 @@
     "tailwind:dev": "tailwindcss build src/assets/css/tailwind.css -o src/assets/css/tailwind.output.css",
     "tailwind:build": "cross-env NODE_ENV=production postcss src/assets/css/tailwind.css -o src/assets/css/tailwind.output.css",
     "prestart": "npm run tailwind:dev",
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "prebuild": "npm run tailwind:build",
     "build": "react-scripts build",
     "cz": "git-cz",
@@ -16,6 +16,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@tailwindui/react": "^0.1.1",
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.5.0",
     "@testing-library/user-event": "7.2.1",
@@ -24,13 +25,16 @@
     "classnames": "2.2.6",
     "faker": "4.1.0",
     "firebase": "^9.15.0",
+    "font-awesome-assets": "^0.0.9",
     "react": "^16.13.1",
     "react-chartjs-2": "2.9.0",
     "react-dom": "^16.13.1",
     "react-focus-lock": "2.4.0",
+    "react-hook-form": "^7.43.8",
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.1",
-    "react-transition-group": "4.4.1"
+    "react-transition-group": "4.4.1",
+    "recharts": "^2.5.0"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "1.1.4",

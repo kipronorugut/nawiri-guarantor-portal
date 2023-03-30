@@ -1,28 +1,36 @@
 import React, { useState } from "react";
 import ImageLight from "../assets/img/create-account-office.jpeg";
 import ImageDark from "../assets/img/create-account-office-dark.jpeg";
-import { GithubIcon, TwitterIcon } from "../icons";
 import { Input, Label, Button } from "@windmill/react-ui";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-
 import { Link, useHistory } from "react-router-dom";
-
 import { auth } from "../config/firebase";
 
 function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
   const signup = async (e) => {
-    alert("dfdfdfd");
     e.preventDefault();
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      history.push("/");
+      const { user } = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      // Send email verification
+      await user.sendEmailVerification();
+      // Display success message
+      setError({
+        message:
+          "A verification email has been sent to your email address. Please follow the instructions in the email to complete the signup process.",
+      });
     } catch (error) {
       console.error(error);
+      setError(error);
     }
   };
 
@@ -49,6 +57,17 @@ function Login() {
               <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                 Create account
               </h1>
+              {error && (
+                <div className="bg-red-500 py-2 px-4 rounded-md text-white font-bold">
+                  {error.code === "auth/email-already-in-use"
+                    ? "The email address is already in use by another account. Please enter a different email address."
+                    : error.code === "auth/invalid-email"
+                    ? "The email address is invalid. Please enter a valid email address."
+                    : error.code === "auth/weak-password"
+                    ? "The password is not strong enough. Please choose a stronger password."
+                    : error.message}
+                </div>
+              )}
               <Label>
                 <span>Email</span>
                 <Input
@@ -57,7 +76,7 @@ function Login() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  placeholder="john@doe.com"
+                  placeholder="Email Address"
                 />
               </Label>
               <Label className="mt-4">
@@ -68,14 +87,6 @@ function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  type="password"
-                />
-              </Label>
-              <Label className="mt-4">
-                <span>Confirm password</span>
-                <Input
-                  className="mt-1"
-                  placeholder="***************"
                   type="password"
                 />
               </Label>

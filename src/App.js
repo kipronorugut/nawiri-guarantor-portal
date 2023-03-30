@@ -22,6 +22,7 @@ function App() {
       setCurrentUser(user);
     });
   }, []);
+  
   return (
     <>
       <Router>
