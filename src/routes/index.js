@@ -7,7 +7,8 @@ const AccountBalancePage = lazy(() => import('../pages/dashboard/accountBalance/
 const PortfolioSummary = lazy(() => import('../pages/dashboard/accountBalance/PortfolioSummary'))
 const LoanManagementDashboardPage = lazy(() => import('../pages/loanManagement/LoanManagementDashboardPage'))
 const ApproveDeclinePage = lazy(() => import('../pages/approveDeclineLoanRequests/ApproveDeclinePage'))
-
+const AccountManagementDashboard = lazy(() => import('../pages/accountManagement/AccountManagementDashboard'))
+const TransactionsDashboard = lazy(() => import('../pages/transactions/TransactionsDashboard'))
 const Forms = lazy(() => import('../pages/Forms'))
 const Cards = lazy(() => import('../pages/Cards'))
 const Charts = lazy(() => import('../pages/Charts'))
@@ -34,23 +35,23 @@ const routes = [
   },
   {
     path: '/forms',
-    component: ApproveDeclinePage,
+    component: AccountManagementDashboard,
   },
   {
     path: '/cards',
-    component: Cards,
+    component: TransactionsDashboard,
   },
   {
     path: '/charts',
-    component: Charts,
+    component: PortfolioSummary,
   },
   {
     path: '/buttons',
-    component: Buttons,
+    component: AccountBalancePage,
   },
   {
     path: '/modals',
-    component: Modals,
+    component: EarningsAndCommissionsPage,
   },
   {
     path: '/tables',

@@ -1,5 +1,18 @@
 import React, { useState } from "react";
 import LoanRequestCard from "./LoanRequestCard";
+// q: what is the purpose of this file?
+// a: this file is the parent component of the LoanRequestCard component
+// q: what is the purpose of the useState hook?
+// a: useState is a hook that allows you to add state to functional components
+
+// Ammend John Doe to John Smith
+// Ammend Jane Doe to Jane Smith
+/// q: what is wrong with the code below?
+// a: the code below is not DRY. It is not reusable. It is not scalable. It is not maintainable.
+// please make the code below DRY, reusable, scalable, and maintainable.
+
+
+
 
 const loanRequests = [
   {
