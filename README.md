@@ -234,3 +234,158 @@ A deposit-backed peer-to-peer mobile lending app built in React Native would all
 6. Consider implementing additional features, such as a rating system for lenders and borrowers, to help build trust and transparency within the app.
 
 Overall, building a deposit-backed peer-to-peer mobile lending app in React Native will require a combination of design and development skills, as well as a thorough understanding of financial and regulatory issues related to lending.
+
+
+***********************************
+
+Nawiri Developer Documentation
+Welcome to the Nawiri developer documentation. This guide provides all the necessary information for developers to start building applications on top of Nawiri.
+
+Getting Started
+To get started with Nawiri, you will need to sign up for an API key. You can do this by contacting the Nawiri team.
+
+Once you have your API key, you can start making requests to the Nawiri API.
+
+API Reference
+The Nawiri API is a RESTful API that uses JSON for data exchange. The base URL for the API is https://api.nawiri.com.
+
+Authentication
+All API requests require authentication using your API key. You should include your API key in the Authorization header of all requests.
+
+Example:
+
+makefile
+Copy code
+Authorization: Bearer YOUR_API_KEY_HERE
+Endpoints
+Transfers and Payments
+Create a Transfer
+Create a transfer from the Guarantor's account to the borrower's account.
+
+bash
+Copy code
+POST /transfers
+Parameters:
+
+amount (required) - The amount of money to transfer.
+from_account (required) - The account to transfer from (either 'earnings', 'loan', or 'wallet').
+to_account (required) - The account to transfer to (either 'earnings', 'loan', or 'wallet').
+borrower_id (required) - The ID of the borrower to transfer to.
+description (optional) - A description for the transfer.
+Example Request:
+
+json
+Copy code
+POST /transfers HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer YOUR_API_KEY_HERE
+
+{
+  "amount": 1000,
+  "from_account": "earnings",
+  "to_account": "loan",
+  "borrower_id": "123456",
+  "description": "Payment towards loan"
+}
+Example Response:
+
+json
+Copy code
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": "1234567890",
+  "amount": 1000,
+  "from_account": "earnings",
+  "to_account": "loan",
+  "borrower_id": "123456",
+  "description": "Payment towards loan",
+  "timestamp": "2022-03-31T10:30:00Z"
+}
+Create a Payment
+Create a payment from the Guarantor's wallet to a payee (either a borrower or an external payee).
+
+bash
+Copy code
+POST /payments
+Parameters:
+
+amount (required) - The amount of money to pay.
+payee_id (required) - The ID of the payee (either a borrower ID or an external payee ID).
+payee_type (required) - The type of the payee (either 'borrower' or 'external').
+description (optional) - A description for the payment.
+Example Request:
+
+json
+Copy code
+POST /payments HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer YOUR_API_KEY_HERE
+
+{
+  "amount": 500,
+  "payee_id": "123456",
+  "payee_type": "borrower",
+  "description": "Payment towards loan"
+}
+Example Response:
+
+json
+Copy code
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": "1234567890",
+  "amount": 500,
+  "payee_id": "123456",
+  "payee_type": "borrower",
+  "description": "Payment towards loan",
+  "timestamp": "2022-03-31
+
+
+  
+Developer Documentation
+Overview
+Nawiri is a web application built to provide financial services to users. The application is built with Node.js and React.js, and it provides a user-friendly interface for users to access the various features.
+
+System Architecture
+The Nawiri system is composed of two main components: the frontend and the backend.
+
+The frontend is built with React.js and handles all user interface components. It communicates with the backend via REST APIs.
+
+The backend is built with Node.js and is responsible for handling all business logic, processing requests from the frontend, and interacting with the database. The backend communicates with the frontend via REST APIs.
+
+The database used is MongoDB, a NoSQL database that provides high performance and scalability.
+
+Development Environment
+To set up the development environment for Nawiri, follow these steps:
+
+Clone the repository from GitHub.
+Install Node.js and npm on your machine.
+Install MongoDB and start the MongoDB service.
+Navigate to the project directory in your terminal and run the command npm install to install all project dependencies.
+Copy the .env.example file to .env and fill in the necessary environment variables.
+Run the command npm start to start the development server.
+Testing
+Nawiri has a suite of automated tests built using Jest and Enzyme. These tests cover both the frontend and backend components of the system.
+
+To run the tests, navigate to the project directory in your terminal and run the command npm test.
+
+Deployment
+Nawiri is deployed to a cloud server using Docker and Kubernetes. The application is containerized using Docker and deployed to a Kubernetes cluster.
+
+To deploy Nawiri to a production environment, follow these steps:
+
+Build the Docker image using the command docker build -t nawiri ..
+Push the Docker image to a container registry.
+Deploy the Kubernetes deployment and service using the provided YAML files.
+API Documentation
+Nawiri's backend provides REST APIs for communication with the frontend. The API documentation is generated automatically using Swagger UI and is available at /api-docs on the running application.
+
+Code Standards
+Nawiri's code follows the Airbnb JavaScript style guide, enforced using ESLint. The code is also formatted using Prettier to ensure consistency.
+
+Conclusion
+Nawiri is a robust and scalable system built to provide financial services to users. Its architecture is designed to be easily scalable and maintainable, while its deployment process is streamlined using Docker and Kubernetes. The system's REST APIs are well-documented, and its automated tests ensure stability and reliability.
