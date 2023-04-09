@@ -5,25 +5,24 @@ import "react-best-tabs/dist/index.css";
 function Dashboard() {
   const [show, setShow] = useState(null);
   return (
-    <>
-      <br />
+    <div>
       <Tabs
         activeTab="1"
-        className=""
+        className="pt-3"
         ulClassName=""
         activityClassName="bg-success"
         onClick={(event, tab) => console.log(event, tab)}
       >
-        <Tab title="Dashboard" className="mr-3">
+        <Tab title="Dashboard" className="mr-3 ">
           <div className="mt-3">
-            <div className="container pt-6 mx-auto">
+            <div className="container mx-auto">
               <div className="flex flex-wrap">
                 <div className="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6">
                   <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 pt-6 gap-8">
                     {/* Remove class [ h-24 ] when adding a card block */}
                     {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
                     <div className="rounded border-gray-300  dark:border-gray-700 border-dashed border-2 h-24">
-                      <div className="bg-white dark:bg-gray-800 rounded shadow px-4 py-3 flex items-center">
+                      <div className="bg-white dark:bg-gray-800 rounded shadow px-4 py-1 flex items-center">
                         <div className="p-4 bg-indigo-700 rounded text-white overflow-hidden">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -599,7 +598,7 @@ function Dashboard() {
           </div>
         </Tab>
       </Tabs>
-    </>
+    </div>
   );
 }
 
