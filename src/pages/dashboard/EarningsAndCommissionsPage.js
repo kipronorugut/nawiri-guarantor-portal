@@ -1,30 +1,40 @@
 import React from "react";
+import IncomeBreakdown from "./earningsTab/IncomeBreakdown";
+import EarningsOverTimeGraph from "./earningsTab/EarningsOverTimeGraph";
 
 const EarningsAndCommissionsPage = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <h2 className="text-xl font-semibold mb-4">Earnings and Commissions</h2>
+      <h6 className="text-xl font-semibold mb-4">Earnings and Commissions</h6>
       <div className="w-full p-6 bg-white rounded-md shadow-md">
-        <div className="flex flex-col md:flex-row md:justify-between items-center mb-8">
+        
+        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center mb-8">
           <div className="flex flex-col">
-            <p className="text-sm font-semibold text-gray-600">
-              Current Account Balance
-            </p>
+            <p className="text-sm font-semibold text-gray-600">Cash Balance</p>
             <p className="text-3xl font-bold text-green-600">KES 50,000</p>
           </div>
           <div className="flex flex-col">
             <p className="text-sm font-semibold text-gray-600">
-              Earnings Summary
+              Income this month
             </p>
             <p className="text-3xl font-bold text-green-600">KES 10,000</p>
           </div>
-          <div className="flex flex-col">
-            <p className="text-sm font-semibold text-gray-600">
-              Commission Rates
-            </p>
-            <p className="text-3xl font-bold text-green-600">5%</p>
-          </div>
         </div>
+
+        <div className="flex flex-col md:flex-row md:justify-between items-center mb-8">
+          <IncomeBreakdown />
+        </div>
+
+        <div className="flex flex-col">
+          <p className="text-sm font-semibold text-gray-600">
+            Commission Rates
+          </p>
+        </div>
+
+        <div className="flex flex-col md:flex-row md:justify-between items-center mb-8">
+          <EarningsOverTimeGraph />
+        </div>
+
         <div className="mb-8">
           <p className="text-sm font-semibold text-gray-600 mb-2">
             Earnings Breakdown
@@ -60,8 +70,6 @@ const EarningsAndCommissionsPage = () => {
             </tbody>
           </table>
         </div>
-        
-        
 
         <div className="flex justify-end">
           <button className="bg-green-600 text-white px-4 py-2 rounded-md mr-4">
