@@ -1,44 +1,84 @@
 import React from "react";
-import { Chart } from "react-google-charts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
 
-export const data = [
-  [
-    "Day",
-    "Guardians of the Galaxy",
-    "The Avengers",
-    "Transformers: Age of Extinction",
-  ],
-  [1, 37.8, 80.8, 41.8],
-  [2, 30.9, 69.5, 32.4],
-  [3, 25.4, 57, 25.7],
-  [4, 11.7, 18.8, 10.5],
-  [5, 11.9, 17.6, 10.4],
-  [6, 8.8, 13.6, 7.7],
-  [7, 7.6, 12.3, 9.6],
-  [8, 12.3, 29.2, 10.6],
-  [9, 16.9, 42.9, 14.8],
-  [10, 12.8, 30.9, 11.6],
-  [11, 5.3, 7.9, 4.7],
-  [12, 6.6, 8.4, 5.2],
-  [13, 4.8, 6.3, 3.6],
-  [14, 4.2, 6.2, 3.4],
+const data = [
+  {
+    name: "Jan",
+    Earnings: 4000,
+    Average: 2400,
+    amt: 2400,
+  },
+  {
+    name: "Feb",
+    Earnings: 3000,
+    Average: 1398,
+    amt: 2210,
+  },
+  {
+    name: "Mar",
+    Earnings: 2000,
+    Average: 9800,
+    amt: 2290,
+  },
+  {
+    name: "Apr",
+    Earnings: 2780,
+    Average: 3908,
+    amt: 2000,
+  },
+  {
+    name: "May",
+    Earnings: 1890,
+    Average: 4800,
+    amt: 2181,
+  },
+  {
+    name: "June",
+    Earnings: 2390,
+    Average: 3800,
+    amt: 2500,
+  },
 ];
 
-export const options = {
-  chart: {
-    title: "Box Office Earnings in First Two Weeks of Opening",
-    subtitle: "in millions of dollars (USD)",
-  },
-};
-
-export default function EarningsOverTimeGraph() {
+const EarningsOverTimeGraph = () => {
   return (
-    <Chart
-      chartType="Line"
-      width="100%"
-      height="400px"
+    <LineChart
+      width={500}
+      height={300}
       data={data}
-      options={options}
-    />
+      margin={{
+        top: 5,
+        right: 30,
+        left: 20,
+        bottom: 5,
+      }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Line
+        type="monotone"
+        dataKey="Earnings"
+        stroke="#8884d8"
+        strokeWidth={4}
+      />
+      <Line
+        type="monotone"
+        dataKey="Average"
+        stroke="#82ca9d"
+        strokeWidth={4}
+      />
+    </LineChart>
   );
-}
+};
+export default EarningsOverTimeGraph;
