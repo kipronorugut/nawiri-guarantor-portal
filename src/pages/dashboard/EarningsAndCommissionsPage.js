@@ -2,6 +2,7 @@ import React from "react";
 import IncomeBreakdown from "./earningsTab/IncomeBreakdown";
 import EarningsOverTimeGraph from "./earningsTab/EarningsOverTimeGraph";
 
+
 const EarningsAndCommissionsPage = () => {
   return (
     <div className="flex flex-col justify-center items-center">
