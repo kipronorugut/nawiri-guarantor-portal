@@ -3,6 +3,7 @@ import PortfolioHealthPageTab from "./portfolioHealthTab/Index";
 import TotalLoanValueMetric from "./portfolioHealthTab/TotalLoanValueMetric";
 import LoansAtRisk from "./portfolioHealthTab/LoansAtRisk";
 import LoanStats from "./portfolioHealthTab/LoanStats";
+import LoanPerformanceGraph from "./portfolioHealthTab/LoanPerformanceGraph";
 
 const PortfolioHealthPage = () => {
   return (
@@ -31,12 +32,12 @@ const PortfolioHealthPage = () => {
           <br />
           <div className="flex flex-wrap">
             <div className="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6">
-              {/* Remove class [ h-24 ] when adding a card block */}
-              {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
-              <div className="rounded border-gray-300  dark:border-gray-700 border-dashed border-2 h-24" />
+              <div class="bg-white shadow-md rounded-md p-6">
+                <LoanPerformanceGraph />
+              </div>
             </div>
             <div className="md:w-1/3 w-full">
-              <LoanStats/>
+              <LoanStats />
             </div>
           </div>
         </div>
