@@ -42,16 +42,13 @@ const loans = [
 const LoanManagementDashboardPage = () => {
   return (
     <div className="container mx-auto">
-      <LoanOverviewCard />
-      <br/>
-        <div className="w-full">
-          <LoanSummaryCard loans={loans} />
-        </div>
-        <br/>
-        <div className="w-full">
-          <LoanTable loans={loans} />
-        </div>
-      
+      <div className="w-full">
+        <LoanSummaryCard loans={loans} />
+      </div>
+      <br />
+      <div className="w-full">
+        <LoanTable loans={loans} />
+      </div>
     </div>
   );
 };
