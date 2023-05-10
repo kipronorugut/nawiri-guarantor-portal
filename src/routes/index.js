@@ -8,7 +8,7 @@ const PortfolioSummary = lazy(() => import('../pages/dashboard/accountBalance/Po
 const LoanManagementDashboardPage = lazy(() => import('../pages/loanManagement/LoanManagementDashboardPage'))
 const ApproveDeclinePage = lazy(() => import('../pages/approveDeclineLoanRequests/ApproveDeclinePage'))
 const AccountManagementDashboard = lazy(() => import('../pages/accountManagement/AccountManagementDashboard'))
-const TransactionsDashboard = lazy(() => import('../pages/transactions/TransactionsDashboard'))
+const TransactionsDashboard = lazy(() => import('../pages/transactions/Index'))
 const TransfersAndPayments = lazy(() => import('../pages/transfersAndPayments/TransfersAndPayments'))
 const Forms = lazy(() => import('../pages/Forms'))
 const Cards = lazy(() => import('../pages/Cards'))

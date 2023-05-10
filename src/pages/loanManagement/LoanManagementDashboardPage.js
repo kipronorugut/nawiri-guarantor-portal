@@ -42,9 +42,7 @@ const loans = [
 const LoanManagementDashboardPage = () => {
   return (
     <div className="container mx-auto">
-      <div className="w-full">
-        <LoanSummaryCard loans={loans} />
-      </div>
+      <div className="w-full"></div>
       <br />
       <div className="w-full">
         <LoanTable loans={loans} />

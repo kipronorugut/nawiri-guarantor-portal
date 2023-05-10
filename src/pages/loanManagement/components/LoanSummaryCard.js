@@ -3,7 +3,7 @@ import React from "react";
 const LoanSummaryCard = () => {
   return (
     <div className="flex items-center w-full justify-center py-2 pt-2">
-      <div className="max-w-2xl rounded shadow bg-white dark:bg-gray-800 py-6 pl-6 pr-12">
+      <div className=" rounded shadow bg-white dark:bg-gray-800 py-6 pl-12 pr-12">
         <div className="flex pb-6 items-center">
           <p className="text-lg md:pr-96 font-semibold leading-4 text-gray-800 dark:text-gray-100">
             Loan Summary
