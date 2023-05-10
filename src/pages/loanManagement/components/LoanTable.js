@@ -104,7 +104,7 @@ function LoanTable() {
                   </div>
                 </TableCell>
                 <TableCell>
-                  <span className="text-sm">$ {user.amount}</span>
+                  <span className="text-sm">KES {user.amount}</span>
                 </TableCell>
                 <TableCell>
                   <Badge type={user.status}>{user.status}</Badge>
