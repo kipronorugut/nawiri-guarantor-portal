@@ -1,23 +1,40 @@
-import { lazy } from 'react'
+import { lazy } from "react";
 
 // use lazy for better code splitting, a.k.a. load faster
-const Dashboard = lazy(() => import('../pages/Dashboard'))
-const EarningsAndCommissionsPage = lazy(() => import('../pages/dashboard/EarningsAndCommissionsPage'))
-const AccountBalancePage = lazy(() => import('../pages/dashboard/accountBalance/AccountBalancePage'))
-const PortfolioSummary = lazy(() => import('../pages/dashboard/accountBalance/PortfolioSummary'))
-const LoanManagementDashboardPage = lazy(() => import('../pages/loanManagement/LoanManagementDashboardPage'))
-const ApproveDeclinePage = lazy(() => import('../pages/approveDeclineLoanRequests/ApproveDeclinePage'))
-const AccountManagementDashboard = lazy(() => import('../pages/accountManagement/AccountManagementDashboard'))
-const TransactionsDashboard = lazy(() => import('../pages/transactions/Index'))
-const TransfersAndPayments = lazy(() => import('../pages/transfersAndPayments/TransfersAndPayments'))
-const Forms = lazy(() => import('../pages/Forms'))
-const Cards = lazy(() => import('../pages/Cards'))
-const Charts = lazy(() => import('../pages/Charts'))
-const Buttons = lazy(() => import('../pages/Buttons'))
-const Modals = lazy(() => import('../pages/Modals'))
-const Tables = lazy(() => import('../pages/Tables'))
-const Page404 = lazy(() => import('../pages/404'))
-const Blank = lazy(() => import('../pages/Blank'))
+const Dashboard = lazy(() => import("../pages/Dashboard"));
+const EarningsAndCommissionsPage = lazy(() =>
+  import("../pages/dashboard/EarningsAndCommissionsPage")
+);
+const AccountBalancePage = lazy(() =>
+  import("../pages/dashboard/accountBalance/AccountBalancePage")
+);
+const PortfolioSummary = lazy(() =>
+  import("../pages/dashboard/accountBalance/PortfolioSummary")
+);
+const LoanManagementDashboardPage = lazy(() =>
+  import("../pages/loanManagement/LoanManagementDashboardPage")
+);
+const ApproveDeclinePage = lazy(() =>
+  import("../pages/approveDeclineLoanRequests/ApproveDeclinePage")
+);
+const AccountManagementDashboard = lazy(() =>
+  import("../pages/accountManagement/AccountManagementDashboard")
+);
+const TransactionsDashboard = lazy(() => import("../pages/transactions/Index"));
+
+const NetworkDashboard = lazy(() => import("../pages/network/Index"));
+
+const TransfersAndPayments = lazy(() =>
+  import("../pages/transfersAndPayments/TransfersAndPayments")
+);
+const Forms = lazy(() => import("../pages/Forms"));
+const Cards = lazy(() => import("../pages/Cards"));
+const Charts = lazy(() => import("../pages/Charts"));
+const Buttons = lazy(() => import("../pages/Buttons"));
+const Modals = lazy(() => import("../pages/Modals"));
+const Tables = lazy(() => import("../pages/Tables"));
+const Page404 = lazy(() => import("../pages/404"));
+const Blank = lazy(() => import("../pages/Blank"));
 
 /**
  * ⚠ These are internal routes!
@@ -31,41 +48,29 @@ const Blank = lazy(() => import('../pages/Blank'))
  */
 const routes = [
   {
-    path: '/dashboard', // the url
+    path: "/dashboard", // the url
     component: Dashboard, // view rendered
   },
   {
-    path: '/forms',
+    path: "/loans",
     component: LoanManagementDashboardPage,
   },
   {
-    path: '/cards',
+    path: "/account",
     component: AccountManagementDashboard,
   },
   {
-    path: '/charts',
+    path: "/transactions",
     component: TransactionsDashboard,
   },
   {
-    path: '/buttons',
+    path: "/transfers-and-payments",
     component: TransfersAndPayments,
   },
   {
-    path: '/modals',
-    component: EarningsAndCommissionsPage,
+    path: "/network",
+    component: NetworkDashboard,
   },
-  {
-    path: '/tables',
-    component: Tables,
-  },
-  {
-    path: '/404',
-    component: Page404,
-  },
-  {
-    path: '/blank',
-    component: Blank,
-  },
-]
+];
 
-export default routes
+export default routes;

@@ -6,7 +6,7 @@ const ApprovalsTable = () => {
       <div className="mb-5 sm:mb-10 rounded-tl-lg rounded-tr-lg">
         <div className="sm:flex items-center justify-between">
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">
-            Approval Requests
+            Loan Approval Requests
           </p>
       
         </div>

@@ -12,53 +12,31 @@ const routes = [
     name: "Home", // name that appear in Sidebar
   },
   {
-    path: "/app/forms",
+    path: "/app/loans",
     icon: "FormsIcon",
     name: "Loans",
   },
 
   {
-    path: "/app/cards",
+    path: "/app/account",
     icon: "CardsIcon",
     name: "Account",
   },
   {
-    path: "/app/buttons",
+    path: "/app/transactions",
     icon: "ButtonsIcon",
     name: "Transactions",
   },
   {
-    path: "/app/charts",
+    path: "/app/transfers-and-payments",
     icon: "ChartsIcon",
     name: "Transfer & Payments",
   },
 
   {
-    icon: "PagesIcon",
+    path: "/app/network",
+    icon: "ChartsIcon",
     name: "My Network",
-    routes: [
-      // submenu
-      {
-        path: "/login",
-        name: "Login",
-      },
-      {
-        path: "/create-account",
-        name: "Create account",
-      },
-      {
-        path: "/forgot-password",
-        name: "Forgot password",
-      },
-      {
-        path: "/app/404",
-        name: "404",
-      },
-      {
-        path: "/app/blank",
-        name: "Blank",
-      },
-    ],
   },
 ];
 
